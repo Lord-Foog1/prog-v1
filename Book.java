@@ -11,9 +11,9 @@ public class Book extends Item {
 
 
     }
-    private double price;
-    private boolean bound;
-    private String author;
+    private final double price;
+    private final boolean bound;
+    private final String author;
 
     public double getPrice() {
         return price;

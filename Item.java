@@ -1,9 +1,9 @@
 public class Item {
 
-    protected String name;
+    private final String name;
 
 
-    public Item(String name) {
+    protected Item(String name) {
 
         this.name = name;
 

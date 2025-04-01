@@ -1,10 +1,10 @@
 abstract class Recording extends Item {
 
 
-    private String artist;
-    private int year;
+    private final String artist;
+    private final int year;
     private int condition;
-    private double price;
+    private final double price;
 
 
 
@@ -20,9 +20,8 @@ abstract class Recording extends Item {
         return artist;
     }
 
-    public String getType(){
-        return "Recording";
-    }
+    public abstract String getType();
+    
     public int getCondition() {
         return condition;
     }
@@ -33,7 +32,7 @@ abstract class Recording extends Item {
     public int getYear() {
         return year;
     }
-    public double getOriginalPrice(){
+    protected double getOriginalPrice(){
         return OriginalPrice;
         }
 }

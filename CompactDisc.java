@@ -3,4 +3,7 @@ public class CompactDisc extends Recording {
         super(artist);
     }
     
+    public String getType(){
+        return "Type";
+    }
 }
