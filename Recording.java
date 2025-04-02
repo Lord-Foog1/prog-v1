@@ -1,10 +1,13 @@
-abstract class Recording extends Item {
+import java.io.Serializable;
+
+public abstract class Recording extends Item implements PriceableWithVAT25 {
 
 
     private final String artist;
     private final int year;
     private int condition;
     private final double price;
+    private double originalPrice;
 
 
 
@@ -33,6 +36,6 @@ abstract class Recording extends Item {
         return year;
     }
     protected double getOriginalPrice(){
-        return OriginalPrice;
-        }
+        return originalPrice + originalPrice * getVAT();
+    }
 }
