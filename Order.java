@@ -15,10 +15,12 @@ public class Order {
     }
 
     public double getTotalValuePlusVAT(){
-        return totalValueVAT;
+        double sum = 0;
+        return sum;
     }
 
     public double getTotalValue(){
-        return totalValue;
+        double sum = 0;
+        return sum;
     }
 }
