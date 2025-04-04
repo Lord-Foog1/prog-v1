@@ -18,9 +18,9 @@ public class Book extends Item implements PriceableWithVAT6 {
 
     public double getPrice() {
         if(bound){
-            return (price + price * getVAT()) * 1.3;
+            return price * 1.3;
         }
-        return price + price * getVAT();
+        return price;
     }
 
     public String toString(){

@@ -11,16 +11,32 @@ public class Order {
     private final ArrayList<Item[]> items = new ArrayList<Item[]>();
 
     public String getReceipt(){
+        String receipt = "";
+        for (Item[] item : items){
+            for (Item i : item){
+                
+            }
+        }
         return "Your total to pay will be" + getTotalValue()+ " without tax, with tax it will be " + getTotalValuePlusVAT();
     }
 
     public double getTotalValuePlusVAT(){
         double sum = 0;
+        for(Item[] item : items){
+            for(Item i : item){
+                sum += i.getPrice();
+            }
+        }
         return sum;
     }
 
     public double getTotalValue(){
         double sum = 0;
+        for(Item[] item : items){
+            for(Item i : item){
+                sum += i.getPrice() + i.getPrice() * i.getVAT();
+            }
+        }
         return sum;
     }
 }

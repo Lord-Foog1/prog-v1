@@ -29,7 +29,7 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
         return condition;
     }
     public double getPrice() {
-        double sum = price * condition/10 + price * getVAT();
+        double sum = price * condition/10;
         if(sum < 12.5){
             return 12.5;
         }

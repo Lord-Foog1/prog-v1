@@ -6,7 +6,7 @@ public class LongPlay extends Recording {
     public String getType(){ return "LP"; }
 
     public double getPrice(){
-        double sum = getOriginalPrice() * getCondition()/10 + (2025 - getYear()) * 5 + getOriginalPrice() * getVAT();
+        double sum = getOriginalPrice() * getCondition()/10 + (2025 - getYear()) * 5;
         if(sum < 12.5){
             return 12.5;
         }
