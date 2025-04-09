@@ -1,42 +1,45 @@
 import java.util.ArrayList;
 
+import java.util.List;
 public class Order {
-    // public Order(Item[])
-    public Order(Item... items) {
-        this.items.add(items);
-    }
 
-    private final long orderNumber = 0;
+    private long orderNumber = 0;
     private static long counter;
-    private final ArrayList<Item[]> items = new ArrayList<Item[]>();
+    private final List<Item> items;
 
-    public String getReceipt(){
-        String receipt = "";
-        for (Item[] item : items){
-            for (Item i : item){
-                
-            }
-        }
-        return "Your total to pay will be" + getTotalValue()+ " without tax, with tax it will be " + getTotalValuePlusVAT();
+    public Order(Item... items) {
+        this.items = List.of(items);
+        orderNumber = counter++;
     }
 
     public double getTotalValuePlusVAT(){
-        double sum = 0;
-        for(Item[] item : items){
-            for(Item i : item){
-                sum += i.getPrice();
-            }
+        double value = 0;
+        for(Item item : items){
+            value += item.getPriceWithVAT();
         }
-        return sum;
+        return value;
     }
 
     public double getTotalValue(){
-        double sum = 0;
-        for(Item[] item : items){
-            for(Item i : item){
-                sum += i.getPrice() + i.getPrice() * i.getVAT();
-            }
+        double value = 0;
+        for (Item item : items) {
+            value += item.getPrice();
         }
-        return sum;
+        return value;
+    }
+
+    public String getReceipt() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(String.format("Receipt for order #%d\n", orderNumber));
+        sb.append(String.format("-----------\n"));
+        for (Item item : items) {
+            sb.append(item.toString());
+            sb.append("\n");
+        }
+        String total = String.format("Total excl.VAT: %f\n", getTotalValue());
+        String totalVAT = String.format("Total incl.VAT: %f\n", getTotalValuePlusVAT());
+        sb.append(total).append(totalVAT);
+        return sb.toString();
     }
 }
