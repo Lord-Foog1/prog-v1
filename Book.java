@@ -1,5 +1,10 @@
 public class Book extends Item implements PriceableWithVAT6 {
 
+    private static final double BOUND_EXTRA = 1.3;
+    private final double price;
+    private final boolean bound;
+    private final String author;
+
     public Book(String name,String author,double price,boolean bound){
 
         super(name);
@@ -9,11 +14,6 @@ public class Book extends Item implements PriceableWithVAT6 {
         this.bound = bound;
 
     }
-    private static final double BOUND_EXTRA = 1.3;
-    private final double price;
-    private final boolean bound;
-    private final String author;
-
 
     public double getPrice() {
         if(bound){
