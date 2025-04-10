@@ -1,4 +1,4 @@
-public abstract class Item implements Pricable{
+public abstract class Item implements Priceable {
 
     private final String name;
 

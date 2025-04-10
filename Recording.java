@@ -1,5 +1,3 @@
-import java.io.Serializable;
-
 public abstract class Recording extends Item implements PriceableWithVAT25 {
 
 

@@ -1,10 +1,9 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
 
-    private long orderNumber = 0;
     private static long counter;
+    private long orderNumber = 0;
     private final List<Item> items;
 
     public Order(Item... items) {
